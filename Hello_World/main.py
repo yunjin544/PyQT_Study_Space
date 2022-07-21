@@ -1,25 +1,21 @@
-import PyQt5
-import sys , os
-from PyQt5.QtWidgets import *
+import sys
+from PyQt5.QtWidgets import QApplication, QWidget
 
-class Main(QDialog):
+
+class MyApp(QWidget):
+
     def __init__(self):
         super().__init__()
-        self.init_ui()
+        self.initUI()
 
-    def init_ui(self):
-        layout = QVBoxLayout()
-
-        label_widget = QLabel("Hello World!")
-
-        layout.addWidget(label_widget)
-
-        self.setLayout(layout)
-
-        self.show
+    def initUI(self):
+        self.setWindowTitle('My First Application')
+        self.move(300, 300)
+        self.resize(400, 200)
+        self.show()
 
 
 if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    main = Main()
-    sys.exit(app.exec_())
+   app = QApplication(sys.argv)
+   ex = MyApp()
+   sys.exit(app.exec_())
